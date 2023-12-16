@@ -50,6 +50,7 @@ return {
                     "php",
                     "qmldir",
                     "qmljs",
+                    "query",
                     "regex",
                     "solidity",
                     "sql",
@@ -65,9 +66,15 @@ return {
                 },
                 sync_install = false,
                 highlight = true,
-                indent = true
+                indent = true,
+                incremental_selection = true,
+                ident = true
             }
         )
+
+        vim.cmd("set foldmethod=expr")
+        vim.cmd("set foldexpr=nvim_treesitter#foldexpr()")
+        vim.cmd("set nofoldenable")
     end
 }
     
